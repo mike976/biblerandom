@@ -218,7 +218,7 @@
         vuetify: new Vuetify(),
         data: {
           showDrawer: false,
-          selectedTranslation: localstorageTryGet("savedTranslation") || "GW",
+          selectedTranslation: localstorageTryGet("savedTranslation") || "NIV",
           translations: window.translations.map(translation => ({
             text: translation.local_title,
             value: translation.local_abbreviation
