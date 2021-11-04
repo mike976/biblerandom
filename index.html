@@ -1,320 +1,302 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title>Random Bibleizer - Choose a Random Bible Chapter to Read</title>
-  <meta name="Description" content="Select a random Bible chapter to read in any English translation. If you're not sure what to read today, start here!">
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2022.5">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
-</head>
-<body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>rel="stylesheet"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>rel="stylesheet"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>rel="stylesheet"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>name="viewport"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link rel="manifest" href='/manifest.json'&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link rel="shortcut icon" href="/favicons/favicon.ico"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>name="description"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>content="Select a random Bible chapter to read in any English translation. If you're not sure what to read today, start here!"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Random Bibleizer - Choose a Random Bible Chapter to Read&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/head&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;body&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;noscript&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p&gt;If you see this message, it means you've disabled scripts on your browser (either you have JavaScript turned off, or maybe you're using AdBlock Plus / uBlock Origin). Please enable scripts for this site to run.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/noscript&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="app"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;v-app&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;v-navigation-drawer app v-model="showDrawer" class="d-sm-none" disable-resize-watcher&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;v-list-item&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;v-btn text href="mailto:hello@spiffy.tech?subject=%5BRandom%20Bibleizer%5D"&gt;Contact Me&lt;/v-btn&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/v-list-item&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;v-list-item&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;v-btn text href="https://github.com/spiffytech/random_bibleizer"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&gt;Source Code&lt;/v-btn</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/v-list-item&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/v-navigation-drawer&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;v-app-bar app&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;v-app-bar-nav-icon @click.stop="showDrawer = !showDrawer" class="d-sm-none"&gt;&lt;/v-app-bar-nav-icon&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;v-toolbar-title&gt;Random Bibleizer&lt;/v-toolbar-title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;v-spacer&gt;&lt;/v-spacer&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;v-btn text href="mailto:hello@spiffy.tech" class="d-none d-sm-flex"&gt;Contact Me&lt;/v-btn&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;v-btn text href="https://github.com/spiffytech/random_bibleizer" class="d-none d-sm-flex"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&gt;Source Code&lt;/v-btn</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/v-app-bar&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;v-main&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;v-container&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;v-row justify="center" class="my-4"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div v-if="displayedChapter" class="display-1"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{{displayedChapter.book.human}} {{displayedChapter.chapter}}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/v-row&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;v-row justify="center" class="my-4"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;v-btn</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>@click="toggleSpinState"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>:color="paused ? null : 'primary'"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&gt;{{ paused ? "Randomize" : "Select book &amp; chapter" }}&lt;/v-btn</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/v-row&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;v-row justify="center" class="my-4"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;v-col cols="12" md="6"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;v-radio-group v-model="weightBooksEvenly" :default="true"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;v-radio label="Choose random book, then random chapter from book" :value="true"&gt;&lt;/v-radio&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;v-radio</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>label="Randomly choose from all Bible chapters at once (Psalms comes up a lot)"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>:value="false"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&gt;&lt;/v-radio&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/v-radio-group&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;v-checkbox</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>v-model="openInBibleAppAuotmatically"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>:label="`Open in Bible app automatically`"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&gt;&lt;/v-checkbox&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/v-col&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;v-col cols="12" md="6"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div style="display: contents;"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;v-select</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>:items="translations"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>label="Remember translation"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>v-model="selectedTranslation"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>v-if="canUseLocalstorage"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div style="display: contents;"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;v-select</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>:items="subsets"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>label="What to randomize?"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>v-model="contentSubset"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;v-btn :disabled="!paused" class="openBibleApp" @click="openBibleApp" :color="'primary'"&gt;Open in Bible app&lt;/v-btn&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/v-col&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/v-row&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;hr /&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;v-row justify="center"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;v-skeleton-loader v-if="iframeLoading" type="paragraph" class="my-4" width="300px"&gt;&lt;/v-skeleton-loader&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/v-row&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;v-row justify="center"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;iframe</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>ref="bible.com"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>v-if="paused"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>:src="getIframeSrc()"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>frameborder="0"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>style="width: 100%; height: 10000px;"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>@load="iframeLoaded"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&gt;&lt;/iframe&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/v-row&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/v-container&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/v-content&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/v-app&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>src="https://browser.sentry-cdn.com/5.11.1/bundle.min.js"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>integrity="sha384-r7/ZcDRYpWjCNXLUKk3iuyyyEcDJ+o+3M5CqXP5GUGODYbolXewNHAZLYSJ3ZHcV"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>crossorigin="anonymous"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&gt;&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js"&gt;&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"&gt;&lt;/script&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="data.js"&gt;&lt;/script&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>try {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>Sentry.init({</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>dsn: "https://c722dae329914eada81cc7407fa43d71@sentry.io/1955363"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} catch (ex) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// User is using a tracker blocker</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// Disabled on Mobile Safari with "block all cookies" enabled</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let canUseLocalstorage = true;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>try {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>localStorage.getItem('bogus');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} catch (ex) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>canUseLocalstorage = false;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>function localstorageTryGet(key) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (canUseLocalstorage) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>return localStorage.getItem(key);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return null;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>function localstorageTrySet(key, value) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (canUseLocalstorage) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>return localStorage.setItem(key, value);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>function chooseRandomBookAndChapterByBook(books) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>var book_index = Math.floor(Math.random() * books.length);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>var chapter = Math.ceil(</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>Math.random() * books[book_index]["chapters"]</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return { book: books[book_index], chapter };</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>function chooseRandomBookAndChapterByChapter(books) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const chapters = [];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>books.forEach(book =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>for (i = 0; i &lt; book.chapters; i++) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>chapters.push({ book, chapter: i + 1 });</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return chapters[Math.floor(Math.random() * chapters.length)];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>function getBibleAppURL(selectedTranslation, displayedChapter) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const translation = window.translations.find(</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>translation =&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>translation.local_abbreviation === selectedTranslation</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return (</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"https://www.bible.com/bible/" +</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>translation.id +</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"/" +</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>displayedChapter.book.usfm +</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"." +</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>displayedChapter.chapter +</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"." +</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>translation.local_abbreviation.toLowerCase()</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const lsWeights = localstorageTryGet('weightBooksEvenly');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const lsOpenAuto = localstorageTryGet('openInBibleAppAuotmatically') === 'true';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const subsets = [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{text: "Whole Bible", value: [0,66]},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{text: "Old Testament", value: [0,39]},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{text: "New Testament", value: [39,66]},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{text: "Psalms and Proverbs", value: [18,20]}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>];</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>new Vue({</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>el: "#app",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>vuetify: new Vuetify(),</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>data: {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>showDrawer: false,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>selectedTranslation: localstorageTryGet("savedTranslation") || "GW",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>translations: window.translations.map(translation =&gt; ({</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text: translation.local_title,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>value: translation.local_abbreviation</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>})),</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>displayedChapter: null,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>paused: false,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>openInBibleAppAuotmatically: lsOpenAuto,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>weightBooksEvenly: lsWeights ? JSON.parse(lsWeights) : true,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>contentSubset: subsets[0].value,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>iframeLoading: false,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>canUseLocalstorage,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>frameCount: 0,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>subsets</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>methods: {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>getIframeSrc() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>return getBibleAppURL(this.selectedTranslation, this.displayedChapter);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>},</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>toggleSpinState() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>this.paused = !this.paused;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>this.iframeLoading = this.paused;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (this.paused &amp;&amp; this.openInBibleAppAuotmatically) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>window.open(getBibleAppURL(this.selectedTranslation, this.displayedChapter), '_blank');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>},</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>openBibleApp() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>window.open(getBibleAppURL(this.selectedTranslation, this.displayedChapter), '_blank');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>},</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>iframeLoaded() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>this.iframeLoading = false;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// this.$refs["bible.com"].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>mounted() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>const animationFrameCallback = () =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (!this.paused) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>this.frameCount += 1;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>const fn = this.weightBooksEvenly</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>? chooseRandomBookAndChapterByBook</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>: chooseRandomBookAndChapterByChapter;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>if (this.frameCount % 5 === 0) {<span class="Apple-converted-space">  </span>// Every 5 frames</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>this.displayedChapter = fn(window.books.slice(this.contentSubset[0], this.contentSubset[1]));</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>requestAnimationFrame(animationFrameCallback);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>requestAnimationFrame(animationFrameCallback);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>watch: {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>selectedTranslation(newValue) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>localstorageTrySet("savedTranslation", newValue);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>},</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>weightBooksEvenly(newValue) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>localstorageTrySet("weightBooksEvenly", newValue);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>},</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>openInBibleAppAuotmatically(newValue) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>localstorageTrySet("openInBibleAppAuotmatically", newValue);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>(function() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>window.counter = "https://randombibleizer.goatcounter.com/count";</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>var script = document.createElement("script");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>script.async = 1;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>script.src = "//gc.zgo.at/count.js";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>var ins = document.getElementsByTagName("script")[0];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>ins.parentNode.insertBefore(script, ins);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>})();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
-</body>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
+    />
+    <link rel="manifest" href='/manifest.json'>
+    <link rel="shortcut icon" href="/favicons/favicon.ico">
+
+    <meta
+      name="description"
+      content="Select a random Bible chapter to read in any English translation. If you're not sure what to read today, start here!"
+    />
+
+    <title>Random Bibleizer - Choose a Random Bible Chapter to Read</title>
+  </head>
+
+  <body>
+    <noscript>
+      <p>If you see this message, it means you've disabled scripts on your browser (either you have JavaScript turned off, or maybe you're using AdBlock Plus / uBlock Origin). Please enable scripts for this site to run.</p>
+    </noscript>
+
+    <div id="app">
+      <v-app>
+        <v-navigation-drawer app v-model="showDrawer" class="d-sm-none" disable-resize-watcher>
+          <v-list-item>
+            <v-btn text href="mailto:hello@spiffy.tech?subject=%5BRandom%20Bibleizer%5D">Contact Me</v-btn>
+          </v-list-item>
+          <v-list-item>
+            <v-btn text href="https://github.com/spiffytech/random_bibleizer"
+              >Source Code</v-btn
+            >
+          </v-list-item>
+        </v-navigation-drawer>
+
+        <v-app-bar app>
+          <v-app-bar-nav-icon @click.stop="showDrawer = !showDrawer" class="d-sm-none"></v-app-bar-nav-icon>
+          <v-toolbar-title>Random Bibleizer</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-btn text href="mailto:hello@spiffy.tech" class="d-none d-sm-flex">Contact Me</v-btn>
+          <v-btn text href="https://github.com/spiffytech/random_bibleizer" class="d-none d-sm-flex"
+            >Source Code</v-btn
+          >
+        </v-app-bar>
+
+        <v-main>
+          <v-container>
+            <v-row justify="center" class="my-4">
+              <div v-if="displayedChapter" class="display-1">
+                {{displayedChapter.book.human}} {{displayedChapter.chapter}}
+              </div>
+            </v-row>
+
+            <v-row justify="center" class="my-4">
+              <v-btn
+                @click="toggleSpinState"
+                :color="paused ? null : 'primary'"
+                >{{ paused ? "Randomize" : "Select book & chapter" }}</v-btn
+              >
+            </v-row>
+
+            <v-row justify="center" class="my-4">
+              <v-col cols="12" md="6">
+                <v-radio-group v-model="weightBooksEvenly" :default="true">
+                  <v-radio label="Choose random book, then random chapter from book" :value="true"></v-radio>
+                  <v-radio
+                    label="Randomly choose from all Bible chapters at once (Psalms comes up a lot)"
+                    :value="false"
+                  ></v-radio>
+                </v-radio-group>
+                <v-checkbox
+                  v-model="openInBibleAppAuotmatically"
+                  :label="`Open in Bible app automatically`"
+                ></v-checkbox>
+              </v-col>
+
+              <v-col cols="12" md="6">
+                <div style="display: contents;">
+                  <v-select
+                    :items="translations"
+                    label="Remember translation"
+                    v-model="selectedTranslation"
+                    v-if="canUseLocalstorage"
+                  />
+                </div>
+
+                <div style="display: contents;">
+                  <v-select
+                    :items="subsets"
+                    label="What to randomize?"
+                    v-model="contentSubset"
+                  />
+                </div>
+                <v-btn :disabled="!paused" class="openBibleApp" @click="openBibleApp" :color="'primary'">Open in Bible app</v-btn>
+              </v-col>
+            </v-row>
+
+            <hr />
+
+            <v-row justify="center">
+              <v-skeleton-loader v-if="iframeLoading" type="paragraph" class="my-4" width="300px"></v-skeleton-loader>
+            </v-row>
+
+            <v-row justify="center">
+              <iframe
+                ref="bible.com"
+                v-if="paused"
+                :src="getIframeSrc()"
+                frameborder="0"
+                style="width: 100%; height: 10000px;"
+                @load="iframeLoaded"
+              ></iframe>
+            </v-row>
+          </v-container>
+        </v-content>
+      </v-app>
+    </div>
+
+    <script
+      src="https://browser.sentry-cdn.com/5.11.1/bundle.min.js"
+      integrity="sha384-r7/ZcDRYpWjCNXLUKk3iuyyyEcDJ+o+3M5CqXP5GUGODYbolXewNHAZLYSJ3ZHcV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+
+    <script src="data.js"></script>
+
+    <script>
+      try {
+        Sentry.init({
+          dsn: "https://c722dae329914eada81cc7407fa43d71@sentry.io/1955363"
+        });
+      } catch (ex) {
+        // User is using a tracker blocker
+      }
+
+      // Disabled on Mobile Safari with "block all cookies" enabled
+      let canUseLocalstorage = true;
+      try {
+        localStorage.getItem('bogus');
+      } catch (ex) {
+        canUseLocalstorage = false;
+      }
+      function localstorageTryGet(key) {
+        if (canUseLocalstorage) {
+          return localStorage.getItem(key);
+        }
+        return null;
+      }
+      function localstorageTrySet(key, value) {
+        if (canUseLocalstorage) {
+          return localStorage.setItem(key, value);
+        }
+      }
+
+      function chooseRandomBookAndChapterByBook(books) {
+        var book_index = Math.floor(Math.random() * books.length);
+        var chapter = Math.ceil(
+          Math.random() * books[book_index]["chapters"]
+        );
+
+        return { book: books[book_index], chapter };
+      }
+
+      function chooseRandomBookAndChapterByChapter(books) {
+        const chapters = [];
+        books.forEach(book => {
+          for (i = 0; i < book.chapters; i++) {
+            chapters.push({ book, chapter: i + 1 });
+          }
+        });
+
+        return chapters[Math.floor(Math.random() * chapters.length)];
+      }
+
+      function getBibleAppURL(selectedTranslation, displayedChapter) {
+        const translation = window.translations.find(
+          translation =>
+            translation.local_abbreviation === selectedTranslation
+        );
+        return (
+          "https://www.bible.com/bible/" +
+          translation.id +
+          "/" +
+          displayedChapter.book.usfm +
+          "." +
+          displayedChapter.chapter +
+          "." +
+          translation.local_abbreviation.toLowerCase()
+        );
+      }
+
+      const lsWeights = localstorageTryGet('weightBooksEvenly');
+      const lsOpenAuto = localstorageTryGet('openInBibleAppAuotmatically') === 'true';
+      const subsets = [
+        {text: "Whole Bible", value: [0,66]},
+        {text: "Old Testament", value: [0,39]},
+        {text: "New Testament", value: [39,66]},
+        {text: "Psalms and Proverbs", value: [18,20]}
+      ];
+
+      new Vue({
+        el: "#app",
+        vuetify: new Vuetify(),
+        data: {
+          showDrawer: false,
+          selectedTranslation: localstorageTryGet("savedTranslation") || "GW",
+          translations: window.translations.map(translation => ({
+            text: translation.local_title,
+            value: translation.local_abbreviation
+          })),
+          displayedChapter: null,
+          paused: false,
+          openInBibleAppAuotmatically: lsOpenAuto,
+          weightBooksEvenly: lsWeights ? JSON.parse(lsWeights) : true,
+          contentSubset: subsets[0].value,
+          iframeLoading: false,
+          canUseLocalstorage,
+          frameCount: 0,
+          subsets
+        },
+        methods: {
+          getIframeSrc() {
+            return getBibleAppURL(this.selectedTranslation, this.displayedChapter);
+          },
+
+          toggleSpinState() {
+            this.paused = !this.paused;
+            this.iframeLoading = this.paused;
+
+            if (this.paused && this.openInBibleAppAuotmatically) {
+              window.open(getBibleAppURL(this.selectedTranslation, this.displayedChapter), '_blank');
+            }
+          },
+
+          openBibleApp() {
+            window.open(getBibleAppURL(this.selectedTranslation, this.displayedChapter), '_blank');
+          },
+
+          iframeLoaded() {
+            this.iframeLoading = false;
+            // this.$refs["bible.com"].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
+          }
+        },
+        mounted() {
+          const animationFrameCallback = () => {
+            if (!this.paused) {
+              this.frameCount += 1;
+              const fn = this.weightBooksEvenly
+                ? chooseRandomBookAndChapterByBook
+                : chooseRandomBookAndChapterByChapter;
+              if (this.frameCount % 5 === 0) {  // Every 5 frames
+                this.displayedChapter = fn(window.books.slice(this.contentSubset[0], this.contentSubset[1]));
+              }
+            }
+            requestAnimationFrame(animationFrameCallback);
+          };
+          requestAnimationFrame(animationFrameCallback);
+        },
+        watch: {
+          selectedTranslation(newValue) {
+            localstorageTrySet("savedTranslation", newValue);
+          },
+
+          weightBooksEvenly(newValue) {
+            localstorageTrySet("weightBooksEvenly", newValue);
+          },
+
+          openInBibleAppAuotmatically(newValue) {
+            localstorageTrySet("openInBibleAppAuotmatically", newValue);
+          }
+        }
+      });
+    </script>
+
+    <script>
+      (function() {
+        window.counter = "https://randombibleizer.goatcounter.com/count";
+
+        var script = document.createElement("script");
+        script.async = 1;
+        script.src = "//gc.zgo.at/count.js";
+        var ins = document.getElementsByTagName("script")[0];
+        ins.parentNode.insertBefore(script, ins);
+      })();
+    </script>
+  </body>
 </html>
